@@ -60,10 +60,10 @@ class ColorModel(models.Model):
 
 class ProductModel(models.Model):
     title = models.CharField(max_length=255)
-    photo = models.ImageField(upload_to='product')
     short_description = models.CharField(max_length=255)
     long_description = models.TextField()
     price = models.FloatField()
+    discount_price = models.FloatField()
     is_stock = models.BooleanField(default=True)
 
     category = models.ManyToManyField(CategoryModel, related_name="products")
@@ -80,4 +80,17 @@ class ProductModel(models.Model):
     class Meta:
         verbose_name = 'product'
         verbose_name_plural = 'products'
+
+
+class ProductImageModel(models.Model):
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, related_name="photos")
+    photo = models.ImageField(upload_to="products")
+
+    def __str__(self):
+        return self.product.title
+
+    class Meta:
+        verbose_name = "product image"
+        verbose_name_plural = "product images"
+
 

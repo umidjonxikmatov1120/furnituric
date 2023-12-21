@@ -128,83 +128,9 @@
                                 </li>
                                 <li>
                                     <a href="#" class="parent">Blog</a>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li class="item">
-                                                <a href="blog-list.html" title="Blog List (Sidebar Left)">Blog List (Sidebar Left)</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="blog-list-sidebar-left2.html" title="Blog List (Sidebar Left) 2">Blog List (Sidebar Left) 2</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="blog-list-sidebar-right.html" title="Category Blog (Right column)">Blog List (Sidebar Right)</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Blog List (No Sidebar)</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Blog Grid (No Sidebar)</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </li>
                                 <li>
-                                    <a href="#" class="parent">Page</a>
-                                    <div class="dropdown-menu drop-tab">
-                                        <ul>
-                                            <li class="item container group">
-                                                <div class="dropdown-menu dropdown-tab">
-                                                    <ul>
-                                                        <li class="item col-md-4 float-left">
-                                                            <span class="menu-title">Category Style</span>
-                                                            <div class="menu-content">
-                                                                <ul class="col">
-                                                                    <li>
-                                                                        <a href="{% url 'pages:product' %}">Product Grid (Sidebar Left)</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="product-grid-sidebar-right.html">Product Grid (Sidebar Right)</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="product-list-sidebar-left.html">Product List (Sidebar left) </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                        <li class="item col-md-4 html float-left">
-                                                            <span class="menu-title">Product Detail Style</span>
-                                                            <div class="menu-content">
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="product-detail.html">Product Detail (Sidebar Left)</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="#">Product Detail (Sidebar Right)</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                        <li class="item col-md-4 html float-left">
-                                                            <span class="menu-title">Bonus Page</span>
-                                                            <div class="menu-content">
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="404.html">404 Page</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="{% url 'pages:about' %}">About Us Page</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <a href="{% url 'products:product' %}" class="parent">Products</a>
                                 </li>
                                 <li class="nav-link">
                                     <a href="{% url 'pages:contact' %}" class="parent">Contact US</a>
@@ -218,7 +144,7 @@
                         <form method="get" action="#">
 
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" name="s" value="" placeholder="Search" class="ui-autocomplete-input" autocomplete="off">
+                            <input type="text" name="q" value="" placeholder="{{ request.GET.q }}" class="ui-autocomplete-input" autocomplete="off">
                             <button type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
